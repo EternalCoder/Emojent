@@ -1,0 +1,15 @@
+\chapter{Test Plan}
+The testing environment consists of a Samsung Galaxy S7, for native execution of application code, and emulators (e.g. Genymotion), for intermediate testing.
+
+To test the visual emotion recognition component, sample video streams will be gathered from the Samsung Galaxy S7's camera(s). That sample data will then be fed to the visual emotion recognition API, after which the result will appropriately display within the application. For testing the vocal emotion recognition component, a similar process will be followed, except audio streams will be captured from the S7's microphone(s) and a different API will be called. Any additional functionality will be tested, in accordance with its expected behavior.
+
+\vspace{5mm}
+\textit{In order to fully test...}
+\begin{itemize}
+    \item The application should appropriately request permissions for both the device's camera(s) and microphone(s).
+    \item The application should allow video streaming from, at least, a rear camera and audio streaming from (an) on-board microphone(s).
+    \item The application should intuitively display the APIs' return data, for the purpose of easily verifying output.
+\end {itemize}
+
+\vspace{5mm}
+Beta testing will be achieved by presenting a pre-release application to fellow students and potentially the target demographic(s).

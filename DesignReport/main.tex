@@ -1,0 +1,70 @@
+\documentclass{scu-thesis}
+% \usepackage{graphicx}	% for including graphics
+% \usepackage{amsmath}	% for advanced typesetting of mathematics
+% \usepackage{txfonts}	% for using the Times-Roman font
+% \usepackage{natbib}	% for better citation styles
+\usepackage[utf8]{inputenc}
+\usepackage{amstext}
+\usepackage{setspace}
+\usepackage{pdflscape}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage{varioref}
+\usepackage{fancyref}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{MnSymbol}
+\usepackage{caption}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+
+% These must be set first ... the rest of the thesis commands rely on them.
+
+\author{Kevin Boehnlein}
+\author{Wilson Burchenal}
+\author{Sathya Srikanth}
+\title{Emojent}
+\department{Department of Computer Engineering}
+
+\degree{Bachelor of Science in Computer Science and Engineering}
+
+% Only bachelor's theses should have multiple authors and/or be from
+% multiple departments.  Signatures required:
+%
+% Bachelor's theses: advisor(s), department chair(s)
+% Master's theses: advisor, reader, department chair
+% Doctoral theses: doctoral committee (including advisor), department chair
+
+\begin{document}
+\frontmatter
+\signature{Thesis Advisor}
+\signature{Thesis Advisor}
+\signature{Department Chair}
+\signature{Department Chair}
+
+\maketitle
+\include{abstract}
+
+\tableofcontents
+\listoffigures
+
+\mainmatter
+\include{introduction}
+\include{requirements}
+\include{useCases}
+\include{activityDiagram}
+\include{conceptualModel}
+\include{softwareArchitecture}
+\include{rationale}
+\include{testPlan}
+\include{techUsed}
+\include{riskAnalysis}
+\include{developmentTimeline}
+
+\backmatter
+\end{document}

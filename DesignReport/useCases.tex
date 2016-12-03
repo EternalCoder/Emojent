@@ -1,0 +1,57 @@
+\chapter{Use Cases}
+The Use Cases section defines specifics regarding the main, expected interactions between users and the system.
+\vspace{5mm}
+\begin{center}
+    \includegraphics[scale = .5]{SeniorDesignUseCases.png}
+\end{center}
+
+\underline{Visually process emotion}
+\begin{description}
+    \item[Goal] Determine a person's emotions, from their facial expression
+    \item[Actor] Anyone
+    \item[Preconditions] Appropriate application permissions must be granted
+    \item[Steps]
+        \begin{itemize}
+            \item{Select visual recognition option from main menu}
+            \item{Press button to start processing camera feed}
+            \item{Press button again to stop processing}
+        \end{itemize}
+    \item[Postconditions] Emotion determined from API call and then presented in a user-friendly manner (e.g. words or emojis)
+    \item[Exceptions] Vocal recognition selected instead(?)
+\end{description}
+
+\vspace{5mm}
+
+\underline{Auditorily process emotion}
+\begin{description}
+    \item[Goal] Determine a person's emotions, from their vocal expression
+    \item[Actor] Anyone
+    \item[Preconditions] Appropriate application permissions must be granted
+    \item[Steps]
+        \begin{itemize}
+            \item{Select auditory recognition from main menu}
+            \item{Press button to start processing microphone feed}
+            \item{Press button again to stop processing}
+        \end{itemize}
+    \item[Postconditions] Emotion determined from API call and then presented in a user-friendly manner (e.g. words or emojis)
+    \item[Exceptions] Visual recognition selected instead(?)
+\end{description}
+
+\vspace{5mm}
+
+\underline{Provide feedback}
+\begin{description}
+    \item[Goal] Supply usage observations to the development team
+    \item[Actor] Non-developers
+    \item[Preconditions] Valid user must be logged in
+    \item[Steps]
+        \begin{itemize}
+            \item{Supply email address}
+            \item{Supply text in an input box}
+            \item{Press button to submit feedback}
+        \end{itemize}
+    \item[Postconditions] Feedback emailed to development account
+    \item[Exceptions] No text supplied(?)
+\end{description}
+
+\vspace{5mm}
