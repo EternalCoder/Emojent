@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Emojent</string>
+    <string name="audioContDesc">Audio</string>
+    <string name="videoContDesc">Video</string>
 </resources>
