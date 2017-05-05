@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.emojent.emojent">
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,17 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".VideoScreenActivity"
-            android:parentActivityName=".MainScreenActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainScreenActivity" />
-        </activity>
-        <activity android:name=".AudioScreenActivity" />
+        <activity android:name=".VideoScreenActivity"/>
+        <activity android:name=".AudioScreenActivity"/>
     </application>
+<<<<<<< HEAD
 
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+=======
+>>>>>>> f28b948f2013a7162b3401921cfa6d92d43fcb92
 </manifest>
