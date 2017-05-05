@@ -18,8 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VideoScreenActivity" />
+        <activity
+            android:name=".VideoScreenActivity"
+            android:parentActivityName=".MainScreenActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainScreenActivity" />
+        </activity>
         <activity android:name=".AudioScreenActivity" />
     </application>
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 </manifest>

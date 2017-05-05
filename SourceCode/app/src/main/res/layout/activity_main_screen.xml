@@ -22,7 +22,8 @@
         tools:layout_constraintTop_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="168dp" />
+        android:layout_marginBottom="168dp"
+        android:onClick="activityRecognize"/>
 
     <ImageButton
         android:id="@+id/audioScreenButton"
