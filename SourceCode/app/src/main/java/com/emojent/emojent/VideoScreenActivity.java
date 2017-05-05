@@ -3,10 +3,12 @@ package com.emojent.emojent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import com.google.android.gms.vision.CameraSource;
 //import com.microsoft.projectoxford.emotionsample.helper.ImageHelper;
 
 public class VideoScreenActivity extends AppCompatActivity {
     //android:onClick="VideoScreenActivity"
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("Test", "Video Screen");
