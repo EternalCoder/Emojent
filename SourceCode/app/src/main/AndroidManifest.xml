@@ -24,10 +24,4 @@
         <activity android:name=".VideoScreenActivity"/>
         <activity android:name=".AudioScreenActivity"/>
     </application>
-<<<<<<< HEAD
-
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
-=======
->>>>>>> f28b948f2013a7162b3401921cfa6d92d43fcb92
 </manifest>
