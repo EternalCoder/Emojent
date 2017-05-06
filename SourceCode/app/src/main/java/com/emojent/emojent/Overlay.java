@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.google.android.gms.vision.CameraSource;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Set;
  */
 
 public class Overlay extends View {
-    private Set<Graphic> mGraphics;
+    private Set<Graphic> mGraphics= new HashSet<>();
     private final Object mLock = new Object();
     private int mPreviewWidth;
     private float mWidthScaleFactor = 1.0f;

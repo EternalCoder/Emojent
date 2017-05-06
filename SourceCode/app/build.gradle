@@ -29,5 +29,5 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.microsoft.projectoxford:emotion:1.0.355'
-    compile 'com.google.android.gms:play-services-vision:10.2.4'
+    compile 'com.google.android.gms:play-services-vision:9.4.0+'
 }
