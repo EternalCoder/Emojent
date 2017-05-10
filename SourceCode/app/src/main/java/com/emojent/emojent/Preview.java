@@ -72,6 +72,8 @@ public class Preview extends ViewGroup{
     }
 
     private void startIfReady() throws IOException {
+        //Log.d("Debug","Before onPictureTaken");
+
         if (mStartRequested && mSurfaceAvailable) {
             if (p.checkSelfPermission(mContext, "android.permission.CAMERA") == 0) {
 
@@ -89,6 +91,8 @@ public class Preview extends ViewGroup{
                     }
                     mOverlay.clear();
                 }
+
+                //mCameraSource.takePicture(mShutter,mPicture);
                 mStartRequested = false;
             }
         }

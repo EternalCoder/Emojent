@@ -3,8 +3,13 @@ package com.emojent.emojent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 
 import com.google.android.gms.vision.face.Face;
+import com.microsoft.projectoxford.emotion.contract.RecognizeResult;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Wilson on 5/5/2017.
@@ -16,6 +21,7 @@ public class FaceGraphic extends Overlay.Graphic{
     private static final float ID_Y_OFFSET = 50.0f;
     private static final float ID_X_OFFSET = -50.0f;
     private static final float BOX_STROKE_WIDTH = 5.0f;
+    private List<RecognizeResult> result = new ArrayList<RecognizeResult>();
 
     private static final int COLOR_CHOICES[] = {
             Color.YELLOW
@@ -59,12 +65,25 @@ public class FaceGraphic extends Overlay.Graphic{
         postInvalidate();
     }
 
+    void updateList(List<RecognizeResult> list)
+    {
+        //Log.d("Debug", "updateList");
+        result = list;
+        postInvalidate();
+    }
+
     @Override
     public void draw(Canvas canvas) {
         Face face = mFace;
         if (face == null) {
             return;
         }
+
+
+            for (RecognizeResult r : result) {
+                Log.d("Debug", String.format("\t happiness: %1$.5f\n", r.scores.happiness));
+                Log.d("Debug", "TESTERINO");
+            }
 
         // Draws a circle at the position of the detected face, with the face's track id below.
         float x = translateX(face.getPosition().x + face.getWidth() / 2);

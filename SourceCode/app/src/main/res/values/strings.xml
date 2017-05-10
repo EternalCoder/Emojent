@@ -2,4 +2,5 @@
     <string name="appName">Emojent</string>
     <string name="audioContDesc">Audio</string>
     <string name="videoContDesc">Video</string>
+    <string name="subscription_key">0238b74b67cc49f9b4a335e8581554e5</string>
 </resources>
