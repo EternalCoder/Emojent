@@ -10,12 +10,8 @@ import com.google.android.gms.vision.CameraSource;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Wilson on 5/5/2017.
- */
-
 public class Overlay extends View {
-    private Set<Graphic> mGraphics= new HashSet<>();
+    private final Set<Graphic> mGraphics= new HashSet<>();
     private final Object mLock = new Object();
     private int mPreviewWidth;
     private float mWidthScaleFactor = 1.0f;
@@ -29,16 +25,16 @@ public class Overlay extends View {
     }
 
     public static abstract class Graphic{
-        private Overlay mOverlay;
+        private final Overlay mOverlay;
 
-        public Graphic(Overlay overlay)
+        Graphic(Overlay overlay)
         {
             mOverlay = overlay;
         }
 
         public abstract void draw(Canvas canvas);
 
-        public void postInvalidate() {
+        void postInvalidate() {
             mOverlay.postInvalidate();
         }
 
@@ -50,7 +46,7 @@ public class Overlay extends View {
             return vertical * mOverlay.mHeightScaleFactor;
         }
 
-        public float translateX(float x) {
+        float translateX(float x) {
             if (mOverlay.mFacing == CameraSource.CAMERA_FACING_FRONT) {
                 return mOverlay.getWidth() - scaleX(x);
             } else {
@@ -58,7 +54,7 @@ public class Overlay extends View {
             }
         }
 
-        public float translateY(float y) {
+        float translateY(float y) {
             return scaleY(y);
         }
 

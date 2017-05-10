@@ -1,13 +1,8 @@
 package com.emojent.emojent;
 
-/**
- * Created by Wilson on 5/5/2017.
- */
-
 import android.content.Context;
 import android.content.res.Configuration;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.ViewGroup;
@@ -20,8 +15,8 @@ import java.io.IOException;
 
 public class Preview extends ViewGroup{
 
-    private Context mContext;
-    private SurfaceView mSurfaceView;
+    private final Context mContext;
+    private final SurfaceView mSurfaceView;
     private boolean mStartRequested;
     private boolean mSurfaceAvailable;
     private CameraSource mCameraSource;
@@ -40,7 +35,7 @@ public class Preview extends ViewGroup{
         addView(mSurfaceView);
     }
 
-    public void start(CameraSource cameraSource) throws IOException {
+    private void start(CameraSource cameraSource) throws IOException {
         if (cameraSource == null) {
             stop();
         }
@@ -75,7 +70,7 @@ public class Preview extends ViewGroup{
         //Log.d("Debug","Before onPictureTaken");
 
         if (mStartRequested && mSurfaceAvailable) {
-            if (p.checkSelfPermission(mContext, "android.permission.CAMERA") == 0) {
+            if (PermissionChecker.checkSelfPermission(mContext, "android.permission.CAMERA") == 0) {
 
                 mCameraSource.start(mSurfaceView.getHolder());
                 if (mOverlay != null) {
@@ -100,13 +95,7 @@ public class Preview extends ViewGroup{
 
     private boolean isPortraitMode() {
         int orientation = mContext.getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            return false;
-        }
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            return true;
-        }
-        return false;
+        return orientation != Configuration.ORIENTATION_LANDSCAPE && orientation == Configuration.ORIENTATION_PORTRAIT;
     }
 
     private class SurfaceCallback implements SurfaceHolder.Callback {
@@ -115,7 +104,7 @@ public class Preview extends ViewGroup{
             mSurfaceAvailable = true;
             try {
                 startIfReady();
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }
         }
@@ -168,7 +157,7 @@ public class Preview extends ViewGroup{
 
         try {
             startIfReady();
-        } catch (IOException e) {
+        } catch (IOException ignored) {
 
         }
     }

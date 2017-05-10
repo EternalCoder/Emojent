@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-//import android.support.design.widget.Snackbar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -71,10 +70,8 @@ public class VideoScreenActivity extends AppCompatActivity {
     };
     //private byte[] data;
     private Bitmap mBitmap;
-
     private Preview mPreview;
     private Overlay mGraphicOverlay;
-
     private static final int RC_HANDLE_GMS = 9001;
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
@@ -147,7 +144,7 @@ public class VideoScreenActivity extends AppCompatActivity {
                 Snackbar.LENGTH_INDEFINITE)
                 .setAction(R.string.ok, listener)
                 .show();
-                */
+        */
     }
 
     @Override
@@ -231,8 +228,8 @@ public class VideoScreenActivity extends AppCompatActivity {
     }
 
     private class GraphicFaceTracker extends Tracker<Face> {
-        private Overlay mOverlay;
-        private FaceGraphic mFaceGraphic;
+        private final Overlay mOverlay;
+        private final FaceGraphic mFaceGraphic;
 
         GraphicFaceTracker(Overlay overlay) {
             mOverlay = overlay;
@@ -258,7 +255,6 @@ public class VideoScreenActivity extends AppCompatActivity {
         public void onMissing(FaceDetector.Detections<Face> detectionResults) {
             mOverlay.remove(mFaceGraphic);
         }
-
 
         @Override
         public void onDone() {
